@@ -1,0 +1,20 @@
+{
+  "name": "react-hooks-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.8.19",
+    "dayjs": "^1.8.14",
+    "gun": "^0.2019.515",
+    "jdenticon": "^2.1.1",
+    "lodash": "^4.17.11",
+    "react": "^16.0.0",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "sass": "^1.21.0"
+  }
+}

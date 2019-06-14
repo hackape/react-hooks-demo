@@ -1,0 +1,163 @@
+$theme-color: #10b1a4;
+
+html {
+  height: 100%;
+  width: 100%
+}
+
+body {
+  font-family: 'Avenir Next', Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-size: 16px;
+  color: #342656;
+  height: 100%;
+  width: 100%
+}
+
+#root {
+  height: 100%;
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+section.header {
+  border-bottom: 1px solid lightgrey;
+  padding: 1em;
+  display: flex;
+
+  .heading {
+    font-size: 1.5em;
+  }
+
+  button.logout {
+    margin-left: auto;
+    border: 1px solid $theme-color;
+    color: $theme-color;
+    background: #fff;
+    border-radius: .5em;
+    padding: 0 1em;
+    height: 3em;
+  }
+}
+
+.chatroom {
+  flex-grow: 1;
+  flex-basis: 0;
+  position: relative;
+  overflow: hidden;
+
+  .messages {
+    overflow: scroll;
+    height: 100%;
+  }
+
+  .unread-messages {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    border-radius: .5em;
+    padding: .25em .5em;
+    border: 1px solid $theme-color;
+    color: $theme-color;
+    background-color: rgba(255, 255, 255, .75);
+  }
+  
+  .message {
+    display: flex;
+    padding: .5em 1em;
+    max-width: 100%;
+  }
+
+  .message-metadata {
+    display: flex;
+    font-size: .75em;
+    opacity: .5;
+    margin-bottom: .5em;
+
+    div {
+      margin-right: .5em;
+    }
+  }
+
+  .message-text {
+    border: 1px solid lightgrey;
+    border-radius: .75em;
+    padding: .5em 1em;
+    display: inline-block;
+    word-break: break-word;
+    white-space: pre-wrap;
+    position: relative;
+  }
+  
+  .message {
+    &.myself {
+      flex-direction: row-reverse;
+      .message-body {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .message-avatar {
+        margin-left: .5em;
+      }
+      
+      .message-text {
+        border-top-right-radius: 0;
+        margin-left: auto;
+      }
+    }
+    
+    &.others {
+      .message-avatar {
+        margin-right: .5em;
+      }
+
+      .message-text {
+        border-top-left-radius: 0;
+      }
+    }
+  }
+}
+
+.footer {
+  border-top: 1px solid lightgrey;
+  padding: .5em;
+  display: flex;
+
+  textarea {
+    min-height: auto;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: .5em;
+    border-radius: .5em;
+    border-color: lightgrey
+  }
+
+  button.send {
+    margin-left: 1em;
+    background-color: $theme-color;
+    color: #fff;
+    border-radius: .5em;
+    border: none;
+    padding: 0 1em;
+    height: 3em;
+  }
+}
+
+.signup {
+  justify-content: center; 
+  align-items: flex-end;
+}
+
+.signup label {
+  opacity: .75;
+  font-size: .75em;
+}
+.signup input {
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+  height: 3em;
+}
